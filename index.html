@@ -7,6 +7,7 @@
     <style>
         :root {
             --primary-color: #007AFF; /* iOS Blue */
+            --android-color: #3DDC84; /* Android Green */
             --bg-color: #f5f5f7;
             --card-bg: #ffffff;
             --text-main: #1d1d1f;
@@ -69,7 +70,7 @@
             height: 80px;
             border-radius: 18px;
             margin-bottom: 16px;
-            background-color: #e1e1e1; /* 이미지 없을 때 기본 색상 */
+            background-color: #e1e1e1;
             object-fit: cover;
             box-shadow: 0 2px 8px rgba(0,0,0,0.1);
         }
@@ -88,19 +89,34 @@
             flex-grow: 1; /* 버튼 위치 하단 고정용 */
         }
 
+        .btn-group {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            flex-wrap: wrap;
+            width: 100%;
+        }
+
         .download-btn {
             background-color: var(--primary-color);
             color: white;
             text-decoration: none;
-            padding: 10px 24px;
+            padding: 10px 20px;
             border-radius: 20px;
             font-weight: 600;
-            font-size: 0.9rem;
-            transition: background-color 0.2s;
+            font-size: 0.85rem;
+            transition: opacity 0.2s;
+            flex: 1;
+            min-width: 110px;
+        }
+
+        .download-btn.android {
+            background-color: var(--android-color);
+            color: #1d1d1f;
         }
 
         .download-btn:hover {
-            background-color: #0056b3;
+            opacity: 0.8;
         }
 
         footer {
@@ -126,10 +142,68 @@
 <div class="app-list">
 
     <div class="app-card">
-        <img src="https://welcome2c.github.io/weathercast_icon.png" alt="WeatherCast Icon" class="app-icon">
+        <img src="https://play-lh.googleusercontent.com/NapQNMUGFaJA5Egb7_BKMKLQbN7DVSrUaDckaT26eTfJqGS8h-w4RJFmBbk4LQBagV23qeAJi1CGxNPtTwaS=w480-h960" alt="WeatherCast Icon" class="app-icon">
         <h2 class="app-title">WeatherCast</h2>
         <p class="app-desc">기상청 날씨와 기온별 옷차림을 한눈에 확인하세요.</p>
-        <a href="https://apps.apple.com/kr/app/weathercast-%EA%B8%B0%EC%83%81%EC%B2%AD-%EB%82%A0%EC%94%A8%EC%99%80-%EA%B8%B0%EC%98%A8%EB%B3%84-%EC%98%B7%EC%B0%A8%EB%A6%BC/id6758431684" class="download-btn" target="_blank">App Store에서 보기</a>
+        <div class="btn-group">
+            <a href="https://apps.apple.com/kr/app/weathercast-%EA%B8%B0%EC%83%81%EC%B2%AD-%EB%82%A0%EC%94%A8%EC%99%80-%EA%B8%B0%EC%98%A8%EB%B3%84-%EC%98%B7%EC%B0%A8%EB%A6%BC/id6758431684" class="download-btn" target="_blank">App Store</a>
+            <a href="https://play.google.com/store/apps/details?id=kr.dev.hoony.weathercast&hl=ko" class="download-btn android" target="_blank">Google Play</a>
+        </div>
+    </div>
+
+    <div class="app-card">
+        <img src="https://play-lh.googleusercontent.com/giPS_DUv24mR4OKJjp-Zr1CvQo-XqKp-FEr1REPgeSHiArcopjpxwDP08UUAEGxk2fLqmdU0268zO0eFLuVTYQ=w480-h960" alt="Pop Quiz Daily Icon" class="app-icon">
+        <h2 class="app-title">Pop Quiz Daily</h2>
+        <p class="app-desc">매일매일 풀어보는 재미있는 상식 퀴즈 앱</p>
+        <div class="btn-group">
+            <a href="https://apps.apple.com/us/app/pop-quiz-daily/id6759132499" class="download-btn" target="_blank">App Store</a>
+            <a href="https://play.google.com/store/apps/details?id=kr.dev.hoony.popquizdaily" class="download-btn android" target="_blank">Google Play</a>
+        </div>
+    </div>
+
+    <div class="app-card">
+        <img src="https://play-lh.googleusercontent.com/MkYQe8YyZ6IlRdse8ys283In_NiNxBiN3zI1AHG-ejkjfoxWbz_h_6hcytS5shePPWBs1dKP3S1EWFZhxTYKeQ" alt="Pixel Walker RPG Icon" class="app-icon">
+        <h2 class="app-title">Pixel Walker RPG</h2>
+        <p class="app-desc">걷기만 해도 성장하는 만보기 기반 RPG 게임</p>
+        <div class="btn-group">
+            <a href="https://play.google.com/store/apps/details?id=kr.dev.hoony.pixelwalkerrpg" class="download-btn android" target="_blank">Google Play</a>
+        </div>
+    </div>
+
+    <div class="app-card">
+        <img src="https://play-lh.googleusercontent.com/rVI6pEWYqgtMWHkL3amBdNGsAt3Lwh_Ie6tnxQgPPaZ9JPEUJNPixKeLcbORGxz4fl1cD9c9kZjOb6U1EMaW=w480-h960" alt="Pick It Icon" class="app-icon">
+        <h2 class="app-title">Pick It</h2>
+        <p class="app-desc">결정 장애를 해결해 주는 빠르고 간편한 룰렛 앱</p>
+        <div class="btn-group">
+            <a href="https://play.google.com/store/apps/details?id=kr.dev.hoony.pickit&hl=ko" class="download-btn android" target="_blank">Google Play</a>
+        </div>
+    </div>
+
+    <div class="app-card">
+        <img src="https://play-lh.googleusercontent.com/Xcd3F-EY4cLIPayvrCuHNHxJSfVHqIuYwZAawjHpokGTu5Jm1ANXqevfBDAQE1N4IY_ePYuJ9YEcA2Utc2tXrQ=w480-h960" alt="Meow Bow Icon" class="app-icon">
+        <h2 class="app-title">Meow Bow</h2>
+        <p class="app-desc">귀여운 강아지, 고양이 사진으로 힐링하는 앱</p>
+        <div class="btn-group">
+            <a href="https://play.google.com/store/apps/details?id=kr.dev.hoony.meowbow&hl=ko" class="download-btn android" target="_blank">Google Play</a>
+        </div>
+    </div>
+
+    <div class="app-card">
+        <img src="https://play-lh.googleusercontent.com/L1--FbnsCQvt-RWIUv23axm2TDeiKHQ10pf0ff77f_kKzIuQTkk3jjn_ruWZpCsiQf5O0J8mxN0_MnTIhs5c=w480-h960" alt="Cocktail Wiki Icon" class="app-icon">
+        <h2 class="app-title">Cocktail Wiki</h2>
+        <p class="app-desc">다양한 칵테일 레시피 및 관련 정보 제공 위키 앱</p>
+        <div class="btn-group">
+            <a href="https://play.google.com/store/apps/details?id=kr.dev.hoony.cocktailwiki" class="download-btn android" target="_blank">Google Play</a>
+        </div>
+    </div>
+
+    <div class="app-card">
+        <img src="https://play-lh.googleusercontent.com/e24P5ZiJAtQ2P6746unfyl7Vsn7-Tv5g9g3muGAlumF6KKeiaUIpk5uLJQDTyEXyUW4dI9RbVIfDQpGVP2F-odE=w240-h480" alt="Astro AI Icon" class="app-icon">
+        <h2 class="app-title">Astro AI</h2>
+        <p class="app-desc">인공지능 기반 운세 및 타로 상담 앱</p>
+        <div class="btn-group">
+            <a href="https://play.google.com/store/apps/details?id=kr.dev.hoony.astroai" class="download-btn android" target="_blank">Google Play</a>
+        </div>
     </div>
 
 </div>
