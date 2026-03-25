@@ -3,11 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TapStudio Apps</title>
+    <title>TapStudio & Picks</title>
     <style>
         :root {
             --primary-color: #007AFF; /* iOS Blue */
             --android-color: #3DDC84; /* Android Green */
+            --coupang-color: #cb1400; /* Coupang Red */
             --bg-color: #f5f5f7;
             --card-bg: #ffffff;
             --text-main: #1d1d1f;
@@ -38,6 +39,26 @@
         p.subtitle {
             color: var(--text-sub);
             font-size: 1rem;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            margin-bottom: 5px;
+            text-align: center;
+        }
+
+        .disclosure {
+            font-size: 0.85rem;
+            color: var(--text-sub);
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .section-divider {
+            margin: 60px 0 40px 0;
+            border-top: 1px solid #e5e5ea;
+            width: 100%;
+            max-width: 1000px;
         }
 
         .app-list {
@@ -75,10 +96,32 @@
             box-shadow: 0 2px 8px rgba(0,0,0,0.1);
         }
 
+        /* 추천 상품용 썸네일 스타일 */
+        .product-img {
+            width: 100%;
+            height: 180px;
+            border-radius: 12px;
+            margin-bottom: 16px;
+            object-fit: contain;
+            background-color: #fff;
+        }
+
         .app-title {
             font-size: 1.25rem;
             font-weight: 700;
             margin: 0 0 8px 0;
+        }
+
+        /* 긴 상품명 2줄 처리 */
+        .product-title {
+            font-size: 1.05rem;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            line-height: 1.4;
+            min-height: 2.8em;
         }
 
         .app-desc {
@@ -86,7 +129,7 @@
             color: var(--text-sub);
             margin-bottom: 20px;
             line-height: 1.4;
-            flex-grow: 1; /* 버튼 위치 하단 고정용 */
+            flex-grow: 1; 
         }
 
         .btn-group {
@@ -115,6 +158,12 @@
             color: #1d1d1f;
         }
 
+        .download-btn.coupang {
+            background-color: var(--coupang-color);
+            color: #ffffff;
+            margin-top: auto; /* 버튼을 항상 하단으로 밀어냄 */
+        }
+
         .download-btn:hover {
             opacity: 0.8;
         }
@@ -140,7 +189,6 @@
 </header>
 
 <div class="app-list">
-
     <div class="app-card">
         <img src="https://play-lh.googleusercontent.com/NapQNMUGFaJA5Egb7_BKMKLQbN7DVSrUaDckaT26eTfJqGS8h-w4RJFmBbk4LQBagV23qeAJi1CGxNPtTwaS=w480-h960" alt="WeatherCast Icon" class="app-icon">
         <h2 class="app-title">WeatherCast</h2>
@@ -150,7 +198,6 @@
             <a href="https://play.google.com/store/apps/details?id=kr.dev.hoony.weathercast&hl=ko" class="download-btn android" target="_blank">Google Play</a>
         </div>
     </div>
-
     <div class="app-card">
         <img src="https://play-lh.googleusercontent.com/giPS_DUv24mR4OKJjp-Zr1CvQo-XqKp-FEr1REPgeSHiArcopjpxwDP08UUAEGxk2fLqmdU0268zO0eFLuVTYQ=w480-h960" alt="Pop Quiz Daily Icon" class="app-icon">
         <h2 class="app-title">Pop Quiz Daily</h2>
@@ -160,7 +207,6 @@
             <a href="https://play.google.com/store/apps/details?id=kr.dev.hoony.popquizdaily" class="download-btn android" target="_blank">Google Play</a>
         </div>
     </div>
-
     <div class="app-card">
         <img src="https://play-lh.googleusercontent.com/MkYQe8YyZ6IlRdse8ys283In_NiNxBiN3zI1AHG-ejkjfoxWbz_h_6hcytS5shePPWBs1dKP3S1EWFZhxTYKeQ" alt="Pixel Walker RPG Icon" class="app-icon">
         <h2 class="app-title">Pixel Walker RPG</h2>
@@ -169,7 +215,6 @@
             <a href="https://play.google.com/store/apps/details?id=kr.dev.hoony.pixelwalkerrpg" class="download-btn android" target="_blank">Google Play</a>
         </div>
     </div>
-
     <div class="app-card">
         <img src="https://play-lh.googleusercontent.com/rVI6pEWYqgtMWHkL3amBdNGsAt3Lwh_Ie6tnxQgPPaZ9JPEUJNPixKeLcbORGxz4fl1cD9c9kZjOb6U1EMaW=w480-h960" alt="Pick It Icon" class="app-icon">
         <h2 class="app-title">Pick It</h2>
@@ -178,16 +223,14 @@
             <a href="https://play.google.com/store/apps/details?id=kr.dev.hoony.pickit&hl=ko" class="download-btn android" target="_blank">Google Play</a>
         </div>
     </div>
-
     <div class="app-card">
         <img src="https://play-lh.googleusercontent.com/Xcd3F-EY4cLIPayvrCuHNHxJSfVHqIuYwZAawjHpokGTu5Jm1ANXqevfBDAQE1N4IY_ePYuJ9YEcA2Utc2tXrQ=w480-h960" alt="Meow Bow Icon" class="app-icon">
         <h2 class="app-title">Meow Bow</h2>
         <p class="app-desc">귀여운 강아지, 고양이 사진으로 힐링하는 앱</p>
         <div class="btn-group">
-            <a href="https://play.google.com/store/apps/details?id=kr.dev.hoony.meowbow&hl=ko" class="download-btn android" target="_blank">Google Play</a>
+            <a href="https://play.google.com/store/apps/details?id=kr.dev.hoony.meowbow&hl=ko" class="download-btn android" target="_blank">Google 파Play</a>
         </div>
     </div>
-
     <div class="app-card">
         <img src="https://play-lh.googleusercontent.com/L1--FbnsCQvt-RWIUv23axm2TDeiKHQ10pf0ff77f_kKzIuQTkk3jjn_ruWZpCsiQf5O0J8mxN0_MnTIhs5c=w480-h960" alt="Cocktail Wiki Icon" class="app-icon">
         <h2 class="app-title">Cocktail Wiki</h2>
@@ -196,7 +239,6 @@
             <a href="https://play.google.com/store/apps/details?id=kr.dev.hoony.cocktailwiki" class="download-btn android" target="_blank">Google Play</a>
         </div>
     </div>
-
     <div class="app-card">
         <img src="https://play-lh.googleusercontent.com/e24P5ZiJAtQ2P6746unfyl7Vsn7-Tv5g9g3muGAlumF6KKeiaUIpk5uLJQDTyEXyUW4dI9RbVIfDQpGVP2F-odE=w240-h480" alt="Astro AI Icon" class="app-icon">
         <h2 class="app-title">Astro AI</h2>
@@ -205,7 +247,85 @@
             <a href="https://play.google.com/store/apps/details?id=kr.dev.hoony.astroai" class="download-btn android" target="_blank">Google Play</a>
         </div>
     </div>
+</div>
 
+<div class="section-divider"></div>
+
+<h2 class="section-title">✨ Developer's Pick</h2>
+<p class="disclosure">"이 포스팅은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다."</p>
+
+<div class="app-list">
+    <div class="app-card">
+        <img src="https://thumbnail.coupangcdn.com/thumbnails/remote/492x492ex/image/retail/images/2159034107554856-af28941e-245f-4729-acf6-7d36dd5b122f.png" alt="깨끗한나라 벚꽃 로맨틱" class="product-img">
+        <h3 class="app-title product-title">깨끗한나라 벚꽃 로맨틱 천연펄프 3겹 고급롤화장지</h3>
+        <div class="btn-group" style="margin-top: auto; width: 100%;">
+            <a href="https://link.coupang.com/a/ea2B5s" class="download-btn coupang" target="_blank">로켓배송 보러가기</a>
+        </div>
+    </div>
+
+    <div class="app-card">
+        <img src="https://thumbnail.coupangcdn.com/thumbnails/remote/492x492ex/image/1025_amir_coupang_oct_80k/6caf/a9ef5fcd6a15f0fee9cb06b8e1fb893ba906124f38b6bcf6f5dfc255c6e5.jpg" alt="라이프홀릭 이중미세모" class="product-img">
+        <h3 class="app-title product-title">라이프홀릭 이중미세모 와이드 칫솔, 5개입, 1세트</h3>
+        <div class="btn-group" style="margin-top: auto; width: 100%;">
+            <a href="https://link.coupang.com/a/ea2C0r" class="download-btn coupang" target="_blank">로켓배송 보러가기</a>
+        </div>
+    </div>
+
+    <div class="app-card">
+        <img src="https://thumbnail.coupangcdn.com/thumbnails/remote/492x492ex/image/vendor_inventory/76a5/be668982842f8a82b413ee18de5a48b7cf974caddc3959893f98017e8e7f.jpg" alt="맘스럽 레몬 주방세제" class="product-img">
+        <h3 class="app-title product-title">맘스럽 레몬 주방세제 베이킹소다 특대용량, 4L, 2개</h3>
+        <div class="btn-group" style="margin-top: auto; width: 100%;">
+            <a href="https://link.coupang.com/a/ea2Dx3" class="download-btn coupang" target="_blank">로켓배송 보러가기</a>
+        </div>
+    </div>
+
+    <div class="app-card">
+        <img src="https://thumbnail.coupangcdn.com/thumbnails/remote/492x492ex/image/retail/images/1531120095896-1afce6dd-903e-4509-bd92-37b12d569ee5.png" alt="사조 해표 콩기름" class="product-img">
+        <h3 class="app-title product-title">사조 해표 콩기름 식용유, 1.5L, 1개</h3>
+        <div class="btn-group" style="margin-top: auto; width: 100%;">
+            <a href="https://link.coupang.com/a/ea2D2L" class="download-btn coupang" target="_blank">로켓배송 보러가기</a>
+        </div>
+    </div>
+
+    <div class="app-card">
+        <img src="https://thumbnail.coupangcdn.com/thumbnails/remote/492x492ex/image/retail/images/16521169138010-2172c4ac-c02c-4c47-b317-e2bc432a0734.jpg" alt="맛있는 우유 GT" class="product-img">
+        <h3 class="app-title product-title">남양유업 맛있는 우유 GT, 900ml, 2개</h3>
+        <div class="btn-group" style="margin-top: auto; width: 100%;">
+            <a href="https://link.coupang.com/a/ea2Ftv" class="download-btn coupang" target="_blank">로켓배송 보러가기</a>
+        </div>
+    </div>
+
+    <div class="app-card">
+        <img src="https://thumbnail.coupangcdn.com/thumbnails/remote/492x492ex/image/retail/images/71396698621347-6ec50130-40d6-4d15-b9be-f5d67c513650.jpg" alt="제주삼다수 그린 무라벨" class="product-img">
+        <h3 class="app-title product-title">제주삼다수 그린 무라벨, 2L, 6개</h3>
+        <div class="btn-group" style="margin-top: auto; width: 100%;">
+            <a href="https://link.coupang.com/a/ea2HzQ" class="download-btn coupang" target="_blank">로켓배송 보러가기</a>
+        </div>
+    </div>
+    
+    <div class="app-card">
+        <img src="https://thumbnail.coupangcdn.com/thumbnails/remote/492x492ex/image/retail/images/2744646443608223-f74d5b16-f363-43e7-9cad-a0e717ab8cdc.jpg" alt="바우아토 포켓쉴 보조배터리" class="product-img">
+        <h3 class="app-title product-title">바우아토 접이식 일체형 도킹형 보조배터리 5000mAh</h3>
+        <div class="btn-group" style="margin-top: auto; width: 100%;">
+            <a href="https://link.coupang.com/a/ea3Atx" class="download-btn coupang" target="_blank">로켓배송 보러가기</a>
+        </div>
+    </div>
+
+    <div class="app-card">
+        <img src="https://thumbnail.coupangcdn.com/thumbnails/remote/492x492ex/image/retail/images/97157453364183-8be52b06-cebe-44b1-88b7-8fad5587234c.jpg" alt="코카콜라 오리지널" class="product-img">
+        <h3 class="app-title product-title">코카콜라 오리지널, 350ml, 24개</h3>
+        <div class="btn-group" style="margin-top: auto; width: 100%;">
+            <a href="https://link.coupang.com/a/ea3BRb" class="download-btn coupang" target="_blank">로켓배송 보러가기</a>
+        </div>
+    </div>
+    
+    <div class="app-card">
+        <img src="https://thumbnail.coupangcdn.com/thumbnails/remote/492x492ex/image/retail/images/17612216138383-46ac9b6f-f751-4a57-8106-c63913b92bbc.jpg" alt="스너글 섬유유연제" class="product-img">
+        <h3 class="app-title product-title">스너글 섬유유연제 햇빛건조향 본품, 4L, 1개</h3>
+        <div class="btn-group" style="margin-top: auto; width: 100%;">
+            <a href="https://link.coupang.com/a/ea3CMQ" class="download-btn coupang" target="_blank">로켓배송 보러가기</a>
+        </div>
+    </div>
 </div>
 
 <footer>
