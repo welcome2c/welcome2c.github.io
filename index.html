@@ -96,30 +96,10 @@
             box-shadow: 0 2px 8px rgba(0,0,0,0.1);
         }
 
-        .product-img {
-            width: 100%;
-            height: 180px;
-            border-radius: 12px;
-            margin-bottom: 16px;
-            object-fit: contain;
-            background-color: #fff;
-        }
-
         .app-title {
             font-size: 1.25rem;
             font-weight: 700;
             margin: 0 0 8px 0;
-        }
-
-        .product-title {
-            font-size: 1.05rem;
-            display: -webkit-box;
-            -webkit-line-clamp: 2;
-            -webkit-box-orient: vertical;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            line-height: 1.4;
-            min-height: 2.8em;
         }
 
         .app-desc {
@@ -172,11 +152,6 @@
             color: var(--text-sub);
             text-align: center;
         }
-
-        footer a {
-            color: var(--text-sub);
-            text-decoration: none;
-        }
     </style>
 </head>
 <body>
@@ -223,6 +198,15 @@
         <p class="app-desc">AI 기술을 접목한 똑똑하고 편리한 스마트 키보드 앱</p>
         <div class="btn-group">
             <a href="https://play.google.com/store/apps/details?id=kr.dev.hoony.gemiboard" class="download-btn android" target="_blank">Google Play</a>
+        </div>
+    </div>
+
+    <div class="app-card">
+        <img src="https://play-lh.googleusercontent.com/NapQNM...3" alt="Voda Icon" class="app-icon">
+        <h2 class="app-title">Voda</h2>
+        <p class="app-desc">소중한 일상의 순간들을 담고 감상하는 미디어 서비스</p>
+        <div class="btn-group">
+            <a href="https://play.google.com/store/apps/details?id=kr.dev.hoony.voda" class="download-btn android" target="_blank">Google Play</a>
         </div>
     </div>
 
@@ -278,10 +262,7 @@
 <script>
     document.addEventListener('DOMContentLoaded', () => {
         fetch('recommended_products.json')
-            .then(response => {
-                if (!response.ok) throw new Error('네트워크 응답이 올바르지 않습니다.');
-                return response.json();
-            })
+            .then(response => response.json())
             .then(data => {
                 const container = document.getElementById('product-list');
                 data.forEach(product => {
